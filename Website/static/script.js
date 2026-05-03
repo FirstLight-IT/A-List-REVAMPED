@@ -3,7 +3,14 @@ console.log("JS is running");
 const passwordInput = document.getElementById('password');
 const strengthMessage = document.getElementById('strength-message');
 
+// Disable autocomplete when user starts typing, re-enable when cleared
 passwordInput.addEventListener('input', () => {
+    if (passwordInput.value !== '') {
+        passwordInput.setAttribute('autocomplete', 'off');
+    } else {
+        passwordInput.setAttribute('autocomplete', 'new-password');
+    }
+    
     const val = passwordInput.value;
 
     // Immediately mark as weak if contains spaces
@@ -46,3 +53,22 @@ passwordInput.addEventListener('input', () => {
     strengthMessage.textContent = strength;
     strengthMessage.style.color = color;
 });
+
+// Password visibility toggle
+function initPasswordToggle(inputId, toggleId) {
+    const inputField = document.getElementById(inputId);
+    const toggleButton = document.getElementById(toggleId);
+    
+    if (!inputField || !toggleButton) return;
+    
+    toggleButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const isPassword = inputField.type === 'password';
+        inputField.type = isPassword ? 'text' : 'password';
+        toggleButton.classList.toggle('show-password', isPassword);
+    });
+}
+
+initPasswordToggle('password', 'toggle-password');
+initPasswordToggle('confirm-password', 'toggle-confirm-password');
