@@ -36,6 +36,13 @@
         <form method="POST" action="{{ url_for('routes.todo') }}" class="input-group">
             <input type="text" name="task" placeholder=" Add new task" required>
             <button type="submit" class="submit-button">ADD</button>
+
+            <select name="priority" id="priority">
+                <option value="low">LOW</option>
+                <option value="medium">MEDIUM</option>
+                <option value="high">HIGH</option>
+            </select>
+            
         </form>
        
 

@@ -101,11 +101,12 @@ def forbidden(e):
 def todo():
     if request.method == 'POST':
         task = request.form.get('task')
+        priority = request.form.get('priority')
 
         if task.strip() == '':
             return redirect(url_for('routes.todo'))
         
-        new_task = Todo(title=task, user_id=current_user.id)
+        new_task = Todo(title=task, user_id=current_user.id, priority=priority)
         db.session.add(new_task)
         db.session.commit()
 
