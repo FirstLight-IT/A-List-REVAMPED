@@ -25,19 +25,6 @@
         <h2>Welcome to A-List, {{ current_user.username }}</h2> 
         <div class="task-subheading">You have {{ current_user.todos | length }} tasks to complete</div>
 
-        <form method="GET" action="{{ url_for('routes.todo') }}" class="search-group">
-            <input type="search" name="search" placeholder="Search tasks..." value="{{ search_query or '' }}">
-            <button type="submit">SEARCH</button>
-        </form>
-
-        <!--
-        <div class="input-group">
-            <input type="text" placeholder="Add a new task...">
-            <button>ADD</button>
-        </div>
-        -->
-
-       
         <form method="POST" action="{{ url_for('routes.todo') }}" class="input-group">
             <input type="text" name="task" placeholder=" Add new task" required>
             <button type="submit" class="submit-button">ADD</button>
@@ -49,6 +36,19 @@
             </select>
 
         </form>
+
+        <div class="search-container">
+            <button type="button" class="search-toggle" id="searchToggle" aria-label="Toggle search">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+            <form method="GET" action="{{ url_for('routes.todo') }}" class="search-group" id="searchForm">
+                <input type="search" name="search" placeholder="Search tasks..." value="{{ search_query or '' }}" id="searchInput" aria-label="Search tasks">
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </form>
+        </div>
        
 
         <div class="priority-legend">
