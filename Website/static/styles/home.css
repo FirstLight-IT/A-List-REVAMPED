@@ -142,6 +142,19 @@ body {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 } /*task box yah*/
 
+.task-box-low{
+    background-color: #fda8a8;
+}
+
+.task-box-medium{
+    background-color: #ff6c6c;
+}
+
+.task-box-high{
+    background-color: #ff4343;
+}
+
+
 .task-box:hover {
     transform: translateY(-2px); /* Floating effect */
     box-shadow: 0 12px 24px rgba(255, 67, 67, 0.25);

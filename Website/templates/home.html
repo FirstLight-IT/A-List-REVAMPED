@@ -42,13 +42,13 @@
                 <option value="medium">MEDIUM</option>
                 <option value="high">HIGH</option>
             </select>
-            
+
         </form>
        
 
         <div class="task-list">
             {% for todo in todos %}
-            <div class="task-box">
+            <div class="task-box task-box-{{todo.priority}}">
                 <span class="task-content">{{todo.title}}</span>
                 <a href="{{ url_for('routes.delete_task', id=todo.id) }}" class="delete-btn">×</a>
             </div>
