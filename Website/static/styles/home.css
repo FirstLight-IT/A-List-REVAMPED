@@ -200,6 +200,40 @@ body {
     letter-spacing: 0.1px;
 }
 
+#priority {
+    border: 2px solid #ff4343;
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4343;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#priority:hover {
+    background-color: #cc2222;
+    border-color: #cc2222;
+}
+
+#priority:focus {
+    border-color: #ff4343;
+    box-shadow: 0 0 0 2px rgba(255, 67, 67, 0.2);
+}
+
+#priority option {
+    background-color: #fff;
+    color: #333;
+}
+
+/*#priority option[value="low"] {
+    background-color: #ff4343;
+    color: #fff;
+    font-weight: bold;
+}*/
+
 .delete-btn {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
