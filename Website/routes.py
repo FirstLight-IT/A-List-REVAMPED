@@ -99,6 +99,9 @@ def forbidden(e):
 @bp.route('/', methods=['GET', 'POST'])
 @login_required
 def todo():
+    if current_user.role == 'admin':
+        return redirect(url_for('routes.admin'))
+
     if request.method == 'POST':
         task = request.form.get('task')
         priority = request.form.get('priority')
