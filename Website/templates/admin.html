@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock %}
+{% block styles %}<link rel="stylesheet" href="../static/styles/admin.css">{% endblock %}
+
+{% block content %}
+
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+        <h2>Users & Task Count</h2>
+        <a href="{{url_for('routes.logout')}}">logout</a>
+    </div>
+    
+
+    <div class="table-container">
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Number of Tasks</th>
+            </tr>
+
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.todos | length }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+   
+
+
+{% endblock %}

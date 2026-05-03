@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 80px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 80px;
+    margin-bottom: 10px;
+    line-height: 70px;
+    color: #ff4343;
+    
+}
+
+h2{
+    margin: 10px;
+    color: #383838;
+}
+
+table{
+    background-color: rgb(255, 255, 255);
+    border: solid 4px #383838;
+    border-collapse: collapse;
+}
+
+td {
+  border-bottom: 2px solid #383838; /* Change hex code here */
+  padding: 12px;
+}
+
+th {
+  border-bottom: 2px solid #383838; 
+  padding: 12px;
+  background-color: #ff4343;
+  color:white;
+}
+
+.table-container{
+
+    display: flex;
+    flex-direction: column;
+    margin: 0% 25%;
+    margin-top: 50px;
+   
+}

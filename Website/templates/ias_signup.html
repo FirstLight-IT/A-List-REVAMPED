@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A-List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/website/static/assets/A-Logo.svg">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .signup {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 230px;
+        }
+
+        .signup h2 {
+            font-size: 32px;
+            color: #3d2b1f;
+            margin-bottom: 80px; 
+        }
+
+        .form-wrapper {
+            width: 320px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #ff4343;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .logo {
+            flex: 1;
+            background-color: #ff4343;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 82px;
+            color: #ffffff;
+            letter-spacing: -4px;
+        }
+
+        .main-logo{
+
+            width: 600px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup">
+        <h2>Create Account</h2>
+        <div class="form-wrapper">
+            <form>
+                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="logo">
+        
+
+        <div>
+            <img src="/website/static/assets/A-Liste(white).svg" class="main-logo">
+        </div>
+    </div>
+
+</body>
+</html>

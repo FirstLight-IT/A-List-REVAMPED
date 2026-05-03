@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock%}
+{% block styles %}<link rel="stylesheet" href="../static/styles/register.css">{% endblock %}
+{% block linkedCSS %} <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@900&display=swap" rel="stylesheet">{% endblock%}
+
+
+{% block content %}
+
+    {% if errors %}
+        <div class="pop-up">
+            <ul class="list-style">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <div class="signup">
+        <h2>Create Account</h2>
+        <div class="form-wrapper">
+            <form method="POST">
+                <input type="text" name="username" required placeholder="Username">
+                <input type="email" name="email" required placeholder="email" id="email">
+                <small id="strength-message"></small>
+                <input type="text" name="password" required placeholder="password" id="password">
+                
+                <input type="password" name="confirm_password" required placeholder="confirm password" id="confirm-password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+         <div class="footer">
+            Already have an account?
+            <u>
+                <a href="{{ url_for('routes.login') }}">Log In</a>
+            </u> instead.
+        </div>
+
+    </div>
+
+    <div class="logo">
+        <div>
+            <img src="../static/assets/A-Liste(white).svg" class="main-logo">
+        </div>
+    </div>
+    
+{% endblock %}

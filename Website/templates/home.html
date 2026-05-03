@@ -1,0 +1,77 @@
+{% extends 'base.html '%}
+{% block title %}A-List{% endblock %}
+{% block styles%}<link rel="stylesheet" href="../static/styles/home.css">{% endblock %}
+
+{% block content %}
+
+
+    <aside class="sidebar">
+        <div>
+            <img src="../static/assets/A-Liste(white).svg" style="width:140px; margin-bottom: 20px;"> 
+            <ul class="nav-menu">
+                <a href="{{ url_for('routes.logout') }}" class="logout-link">Log Out</a>
+            </ul>
+        </div>
+        
+    </aside>
+
+
+
+
+
+
+    <main class="workspace">
+       
+        <h2>Welcome to A-List, {{ current_user.username }}</h2> 
+        <div class="task-subheading">You have {{ current_user.todos | length }} tasks to complete</div>
+
+        <!--
+        <div class="input-group">
+            <input type="text" placeholder="Add a new task...">
+            <button>ADD</button>
+        </div>
+        -->
+
+       
+        <form method="POST" action="{{ url_for('routes.todo') }}" class="input-group">
+            <input type="text" name="task" placeholder=" Add new task" required>
+            <button type="submit" class="submit-button">ADD</button>
+        </form>
+       
+
+        <div class="task-list">
+            {% for todo in todos %}
+            <div class="task-box">
+                <span class="task-content">{{todo.title}}</span>
+                <a href="{{ url_for('routes.delete_task', id=todo.id) }}" class="delete-btn">×</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+<!--
+    <h1>Welcome to A-LIST, {{ current_user.username }}!</h1>
+
+    <form method="POST" action="{{ url_for('routes.todo') }}">
+        <input type="text" name="task" placeholder="New task" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for todo in todos %}
+            <li>
+                {{ todo.title }}
+                <a href="{{ url_for('routes.delete_task', id=todo.id) }}">❌</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('routes.logout') }}">Logout</a>
+
+
+-->
+
+
+
+{% endblock %}
+
