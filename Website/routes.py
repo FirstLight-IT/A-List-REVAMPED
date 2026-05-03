@@ -112,9 +112,13 @@ def todo():
 
         return redirect(url_for('routes.todo'))
     
+    search_query = request.args.get('search', '').strip()
+    todos_query = Todo.query.filter_by(user_id=current_user.id)
+    if search_query:
+        todos_query = todos_query.filter(Todo.title.ilike(f"%{search_query}%"))
 
-    todos = Todo.query.filter_by(user_id=current_user.id).all()
-    return render_template('home.html', todos=todos)
+    todos = todos_query.all()
+    return render_template('home.html', todos=todos, search_query=search_query)
 
 
 @bp.route('/delete-task/<int:id>')

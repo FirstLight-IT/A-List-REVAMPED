@@ -88,6 +88,40 @@ body {
     font-weight: 400;
 }
 
+.search-group,
+.input-group { 
+    display: flex;
+    max-width: 650px;
+    margin-bottom: 20px;
+    border: 1px solid #bdbdbd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-group {
+    margin-bottom: 40px;
+}
+
+.search-group input {
+    flex: 1;
+    padding: 18px 22px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.search-group button {
+    background-color: #3d2b1f;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 .input-group { 
     display: flex;
     max-width: 650px;

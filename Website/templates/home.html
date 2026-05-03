@@ -25,6 +25,11 @@
         <h2>Welcome to A-List, {{ current_user.username }}</h2> 
         <div class="task-subheading">You have {{ current_user.todos | length }} tasks to complete</div>
 
+        <form method="GET" action="{{ url_for('routes.todo') }}" class="search-group">
+            <input type="search" name="search" placeholder="Search tasks..." value="{{ search_query or '' }}">
+            <button type="submit">SEARCH</button>
+        </form>
+
         <!--
         <div class="input-group">
             <input type="text" placeholder="Add a new task...">
@@ -46,6 +51,7 @@
         </form>
        
 
+        {% if todos %}
         <div class="task-list">
             {% for todo in todos %}
             <div class="task-box task-box-{{todo.priority}}">
@@ -54,6 +60,9 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <div class="empty-state">No tasks found matching your search.</div>
+        {% endif %}
     </main>
 
 <!--
