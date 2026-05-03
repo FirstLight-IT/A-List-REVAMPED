@@ -206,3 +206,54 @@ body {
     font-size: 22px;
     line-height: 1;
 }
+
+.priority-legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    max-width: 650px;
+    margin-left: 130px;
+    border: 1px solid #e0e0e0;
+}
+
+.priority-legend h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3d2b1f;
+    margin: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.legend-low {
+    background-color: #fda8a8;
+}
+
+.legend-medium {
+    background-color: #ff6c6c;
+}
+
+.legend-high {
+    background-color: #ff4343;
+}
+
+.legend-item span {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+

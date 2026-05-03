@@ -51,6 +51,23 @@
         </form>
        
 
+        <div class="priority-legend">
+            <h4>Priority Legend:</h4>
+            <div class="legend-item">
+                <div class="legend-color legend-low"></div>
+                <span>Low</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-medium"></div>
+                <span>Medium</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-high"></div>
+                <span>High</span>
+            </div>
+        </div>
+
+
         {% if todos %}
         <div class="task-list">
             {% for todo in todos %}
